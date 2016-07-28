@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+<link rel="stylesheet" href="build/index.min.css"/>
+<style>
+
+
+.textHeight100px{margin-bottom: 40px;color:#398;font-size:30px;}
+
+.display-flex div{height: 50px;text-align: center;line-height: 50px;font-family:'微软雅黑';}
+.display-flex div:nth-of-type(1) {background:coral }
+.display-flex div:nth-of-type(2) {background:khaki }
+.display-flex div:nth-of-type(3) {background:lightblue }
+.display-flex div:nth-of-type(4) {background:pink }
+.display-flex div:nth-of-type(5) {background:#9f0 }
+.display-flex div:nth-of-type(6) {background:#09f }
+</style>
+</head>
+<body>
+	<!-- 
+	aling 对齐
+	end		结束
+	baseline 底线
+	justify 伸展
+	container 容器  
+	row   行
+	column   纵向
+	direction 方向
+	reverse   相反
+	wrap     包裹
+	nowrap   不包裹
+	space   空间
+	around  周围
+ 	justify-content 包含的内容
+	distrbute  分散
+	pack      包裹
+	align-self    平均对齐（对齐平均）
+	grid     格子
+	stretch   伸展
+	between   之间
+	around    周围，左右，靠近
+	distribute  散发，散布
+	 -->
+	<div class="textHeight100px">display:flex &nbsp;&nbsp;flex:1</div>
+	<div class="display-flex">
+	  <div class="flex-1">flex:1</div>
+	  <div  class="flex-1">flex:1</div>
+	  <div class="flex-1">flex:1</div>
+	  <div class="flex-1">flex:1</div>
+	</div>
+<hr>
+	<div class="textHeight100px">display:flex &nbsp;&nbsp;flex:1</div>
+	<div class="display-flex">
+	  <div style="width:200px">width:200px</div>
+	  <div class="flex-1">flex:1</div>
+	  <div class="flex-2">flex:2</div>
+	  <div class="flex-1">flex:1</div>
+	</div>
+<hr>
+	<div class="textHeight100px">display:flex &nbsp;&nbsp;flex-direction:row-reverse</div>
+	<div class="display-flex flex-row-r">
+		<div style="width:200px">width:200px</div>
+		<div class="flex-1">flex:1</div>
+		<div class="flex-2">flex:2</div>
+		<div class="flex-1">flex:1</div>
+	</div>
+<hr>
+	<div class="textHeight100px">display:flex &nbsp;&nbsp;flex-direction:column</div>
+	<div class="display-flex flex-column">
+		<div class="flex-1">flex:1</div>
+		<div class="flex-2">flex:1</div>
+		<div class="flex-3">flex:1</div>
+	</div>
+<hr>
+  wrap 包了一层可以看到，容器撑不下了但没有折行  ，用了 flex-wrap:nowrap  ，也设置 宽度 900 但不会折行
+	<div class="textHeight100px">display:flex &nbsp;&nbsp;flex-wrap:nowrap</div>
+	<div class="display-flex flex-wrap-n"  style="width:900px;">
+		<div style="width:150px;">width:150px</div>
+		<div style="width:250px;">width:250px</div>
+		<div style="width:750px;">width:750px</div>
+	</div>
+<hr>
+	设置父级固定宽度 900 子级 让它 明显大于父级容器，这样看到 子级超出了，会折行
+	<div class="textHeight100px">display:flex &nbsp;&nbsp;flex-wrap:wrap</div>
+	<div class="display-flex flex-wrap" style="width:900px;">
+		<div style="width:150px;">width:150px</div>
+		<div style="width:250px;">width:250px</div>
+		<div style="width:750px;">width:750px</div>
+	</div>
+<hr>
+	盒子里面的 空间 向 <h2 style="display:inline-block">结束</h2> 的方向 ,这个写法稍微不一样点<br>
+	.justify-content-end{
+		-webkit-box-pack:end;
+		-ms-flex-pack:end;
+		justify-content:flex-end;
+	}
+	<div class="textHeight100px">display:flex &nbsp;&nbsp;justify-content:flex-end</div>
+	<div class="display-flex justify-content-end">
+		<div style="width:100px;">width:100px</div>
+		<div style="width:100px;">width:100px</div>
+	</div>
+<br>
+	盒子里面的 空间 向 <h2 style="display:inline-block">中间</h2> 的方向 ,这个写法稍微不一样点<br>
+	.justify-content-center{
+		-webkit-box-pack:center;
+		-ms-flex-pack:center;
+		justify-content:center;
+	}
+	<div class="textHeight100px">display:flex &nbsp;&nbsp;justify-content:center</div>
+	<div class="display-flex justify-content-center">
+		<div style="width:100px;">width:100px</div>
+		<div style="width:100px;">width:100px</div>
+	</div>
+<hr>
+	盒子里面的 空间 向 <h2 style="display:inline-block">左右两边</h2> 的方向 ,这个写法稍微不一样点<br>
+	.justify-content-space-between{
+		-webkit-box-pack:justify;
+		-ms-flex-pack:justify;
+		justify-content:space-between;
+	}
+	<div class="textHeight100px">display:flex &nbsp;&nbsp;justify-content:space-between</div>
+	<div class="display-flex justify-content-space-between">
+		<div style="width:100px;">width:100px</div>
+		<div style="width:100px;">width:100px</div>
+	</div>
+<hr>
+	平均分布 空间 <br>
+	.justify-content-space-around{
+		-webkit-flex-pack:distribute;
+		justify-content:space-around;
+	}
+	<div class="textHeight100px">display:flex &nbsp;&nbsp;justify-content:space-around</div>
+	<div class="display-flex justify-content-space-around">
+		<div style="width:100px;">width:100px</div>
+		<div style="width:100px;">width:100px</div>
+	</div>
+<hr>
+	东西 子级 添加的不少
+	<div class="textHeight100px">display:flex</div>
+	<div class="display-flex" style="width:800px;height:120px;font-size:12px;">
+		<div class="flex-1 align-self-start">flex:1 align:self-start</div>
+		<div class="flex-1 align-self-flex-end">flex:1 align:self-flex-end</div>
+		<div class="flex-1 align-self-center">flex:1 align-self:center</div>
+		<div class="flex-1 align-self-auto">flex:1 align-self:auto</div>
+		<div class="flex-1 align-self-baseline">flex:1 align-self:baseline</div>
+	</div>
+<hr>
+	<h3>这个是默认的 可以不写</h3>
+	<div class="textHeight100px">display:flex &nbsp;&nbsp; align-items:flex-start</div>
+	<div class="display-flex align-items-flex-start" style="height:200px;">
+		<div class="flex-1"style="height:100px;">flex:1</div>
+		<div class="flex-1">flex:1</div>
+	</div>
+<hr>
+	<div class="textHeight100px">display:flex &nbsp;&nbsp; align-items:flex-end</div>
+	<div class="display-flex align-items-flex-end" style="height:200px;">
+		<div class="flex-1" style="height:100px">flex:1</div>
+		<div class="flex-1">flex:1</div>
+	</div>
+<hr>
+	<div class="textHeight100px">display:flex &nbsp;&nbsp; align-items:center</div>
+	<div class="display-flex align-items-center" style="height:200px;">
+		<div class="flex-1" style="height:100px">flex:1</div>
+		<div class="flex-1">flex:1</div>
+	</div>
+</body>
+</html>
